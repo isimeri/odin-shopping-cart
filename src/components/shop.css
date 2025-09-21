@@ -1,0 +1,28 @@
+
+.products-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+}
+
+.product-card{
+  background-color: #ccc;
+
+}
+.product-card-image{
+  max-width: 100%;
+}
+.product-card-text{
+  padding: 0.5rem;
+  color: black;
+}
+.hwrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.product-card-price{
+  font-size: 1.4rem;
+  font-weight: bold;
+}

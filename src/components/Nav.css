@@ -1,0 +1,14 @@
+nav{
+  display: flex;
+  gap: 1rem;
+  background-color: #222;
+}
+nav a{
+  color: white;
+  text-decoration: none;
+  padding: 1rem
+}
+nav a:hover{
+  background-color: #aaa;
+  color: #222;
+}
