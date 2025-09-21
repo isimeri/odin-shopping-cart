@@ -1,0 +1,20 @@
+
+.sidebar{
+  padding: 1rem;
+  background-color: #111;
+  min-width: 320px;
+}
+h2{
+  font-size: 1.8rem;
+}
+.sidebar-filter-list{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style-type: none;
+}
+.sidebar-filter-list > li{
+  padding: 0.5rem 1rem;
+  background-color: #555;
+  border-radius: 0.6rem;
+}

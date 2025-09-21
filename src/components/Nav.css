@@ -1,7 +1,7 @@
 nav{
   display: flex;
   gap: 1rem;
-  background-color: #222;
+  background-color: #111;
 }
 nav a{
   color: white;
@@ -10,5 +10,5 @@ nav a{
 }
 nav a:hover{
   background-color: #aaa;
-  color: #222;
+  color: #111;
 }
