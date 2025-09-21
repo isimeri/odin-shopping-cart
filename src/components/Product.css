@@ -1,0 +1,7 @@
+.gamecard{
+  display: flex;
+  gap: 2rem;
+}
+.carousel{
+  width: 1200px;
+}
