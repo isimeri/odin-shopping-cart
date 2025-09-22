@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiMicrosoftXbox, mdiSonyPlaystation, mdiNintendoSwitch } from '@mdi/js';
 
 const ProductsContext = createContext();
 
@@ -6,6 +7,39 @@ export function ProductsProvider({ children }) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const PLATFORM_ICONS = {
+    pc: {
+      icon: mdiMicrosoftWindows,
+      used: false
+    },
+    linux: {
+      icon: mdiPenguin,
+      used: false
+    },
+    macos: {
+      icon: mdiApple,
+      used: false
+    },
+    playstation: {
+      icon: mdiSonyPlaystation,
+      used: false
+    },
+    xbox: {
+      icon: mdiMicrosoftXbox,
+      used: false
+    },
+    nintendo: {
+      icon: mdiNintendoSwitch,
+      used: false
+    }
+  };
+
+  function resetIcons(){
+    for(let prop in PLATFORM_ICONS){
+      PLATFORM_ICONS[prop].used = false;
+    }
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -23,7 +57,7 @@ export function ProductsProvider({ children }) {
               return item.platforms.some(platform =>["pc","linux","macos","playstation","xbox","nintendo"].includes(platform.name.toLowerCase().split(" ")[0]))
             })
           .map(item => {
-            item.price = (Math.random() * (item.rating * 10 + 5)).toFixed(2);
+            item.price = parseFloat((Math.random() * (item.rating * 10 + 5)).toFixed(2));
             return item;
           });
           console.log(editedJson);
@@ -42,7 +76,7 @@ export function ProductsProvider({ children }) {
   }, []);
 
   return (
-    <ProductsContext.Provider value={{data, error, isLoading}}>
+    <ProductsContext.Provider value={{data, error, isLoading, PLATFORM_ICONS, resetIcons}}>
       {children}
     </ProductsContext.Provider>
   );

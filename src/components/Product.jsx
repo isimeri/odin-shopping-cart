@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { useProducts } from '../ProductsContext';
+import { useCart } from '../CartContext';
 import Carousel from "./Carousel";
 import Nav from './Nav';
 import './Product.css'
@@ -8,6 +9,7 @@ import './Product.css'
 function Product() {
   const { id } = useParams();
   const {data, error, isLoading} = useProducts();
+  const { addToCart } = useCart();
   const item = data.find(it => it.slug === id)
 
   return (
@@ -27,8 +29,8 @@ function Product() {
             <div className="gamecard-platforms">Platforms: {item.platforms.map(p => <span key={p.id} className='gamecard-platform'>{p.name}</span>)}</div>
           </div>
           <div className="hwrapper">
-            <p className="product-card-price">${item.price}</p>
-            <button>Add to cart</button>
+            <p className="product-card-price">{item.price}€</p>
+            <button onClick={() => {addToCart(item)}} >Add to cart</button>
           </div>
         </div>
       </div>
