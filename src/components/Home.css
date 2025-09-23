@@ -1,0 +1,48 @@
+.home-container{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.home-inner{
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.homepage-left{
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.credit, .developer, .homepage-left > .vwrapper{
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: hsl(0, 0%, 5%, 0.7);
+}
+.title{
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.disclaimer{
+  line-height: 1.8;
+}
+
+.homepage-right > a{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: hsl(0, 0%, 5%, 0.7);
+}
+
+.video-wallpaper{
+  position: fixed;
+  z-index: -10;
+  inset: 0;
+  object-fit: cover;
+}

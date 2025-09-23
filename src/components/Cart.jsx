@@ -14,7 +14,7 @@ const Cart = () => {
       <Nav />
       <div className="cart-inner">
         <h1>Your cart</h1>
-        <div className="hwrapper">
+        {cart.length > 0 ?<div className="hwrapper">
           <div className="vwrapper">
             <ul className="cart-list">
               {cart.map(item => {
@@ -61,7 +61,7 @@ const Cart = () => {
             <p className="estimated-total">Estimated total: <span>{cart.reduce((acc, cur) => acc + cur.price, 0)}€</span></p>
             <button className="pay-btn">Continue to payment</button>
           </div>
-        </div>
+        </div> : <p className="empty-cart">Hmm...you got an empty cart...</p>}
       </div>
     </div>
   );
