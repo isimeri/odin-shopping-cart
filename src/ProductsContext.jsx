@@ -60,8 +60,13 @@ export function ProductsProvider({ children }) {
             item.price = parseFloat((Math.random() * (item.rating * 10 + 5)).toFixed(2));
             return item;
           });
-          console.log(editedJson);
+
+          const maset = new Set(editedJson.reduce((acc, item) => {
+            return acc.concat(item.genres.map(g => g.name));
+          },[]))
+          console.log(maset);
           setData(editedJson);
+
         }        
       
       } catch(err){

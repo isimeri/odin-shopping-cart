@@ -2,9 +2,27 @@
 .sidebar{
   padding: 1rem;
   min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.remove-filters-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  color: #ff6d6d;
+  border: 1px solid #ff6d6d;
+
+}
+.remove-filters-btn:hover{
+  cursor: pointer;
+  color: #ff3b3b;
+  border: 1px solid #ff3b3b;
 }
 h2{
   font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 .sidebar-filter-list{
   display: flex;
@@ -12,8 +30,23 @@ h2{
   gap: 0.5rem;
   list-style-type: none;
 }
-.sidebar-filter-list > li{
+.sidebar-filter-btn{
   padding: 0.5rem 1rem;
-  background-color: #555;
+  color: #ddd;
+  background-color: #333;
+  background-image: none;
   border-radius: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+.sidebar-filter-btn:hover{
+  background-color: #555;
+  background-image: none;
+  cursor: pointer;
+}
+.sidebar-filter-btn.active{
+  background-color: #00da0e;
+  color: #111;
 }

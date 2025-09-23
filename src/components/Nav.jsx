@@ -1,12 +1,13 @@
 import { Link } from 'react-router';
 import "./Nav.css";
+import { mdiController } from '@mdi/js';
 
 function Nav() {
   return (
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/shop">Shop</Link>
-      <Link to="/cart">Cart</Link>
+      <Link to="/">HOME</Link>
+      <Link to="/shop">STORE</Link>
+      <Link to="/cart">CART</Link>
     </nav>
   )
 }

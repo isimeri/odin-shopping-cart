@@ -10,7 +10,7 @@ const Cart = () => {
   const {cart, removeFromCart, clearCart} = useCart()
 
   return (
-    <>
+    <div className="cart-container">
       <Nav />
       <div className="cart-inner">
         <h1>Your cart</h1>
@@ -62,10 +62,8 @@ const Cart = () => {
             <button className="pay-btn">Continue to payment</button>
           </div>
         </div>
-        
-
       </div>
-    </>
+    </div>
   );
 };
 

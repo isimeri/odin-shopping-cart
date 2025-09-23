@@ -1,11 +1,13 @@
 nav{
   display: flex;
   gap: 1rem;
+  background-color: hsl(0, 0%, 5%, 0.8);
 }
 nav a{
   color: white;
   text-decoration: none;
-  padding: 1rem
+  padding: 1rem;
+  font-size: 1.1rem;
 }
 nav a:hover{
   background-color: #aaa;

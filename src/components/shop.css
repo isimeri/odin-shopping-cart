@@ -1,7 +1,28 @@
-
+.shop-container{
+  display: grid;
+  grid-template-areas: 
+  "nav nav"
+  "sidebar main";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+nav{
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.sidebar{
+  grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
 .products-container{
+  grid-area: main;
+  overflow-y: auto;
   padding: 2rem;
-  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
@@ -13,7 +34,7 @@
 
 .product-card{
   border-radius: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: hsl(0, 0%, 0%, 0.5);
   height: 100%;
   display: flex;
@@ -23,6 +44,7 @@
   background-size: cover;
   background-position: center;
   min-height: 200px;
+  border-radius: 1rem 1rem 0 0;
 }
 .product-card-text{
   padding: 0.8rem;
@@ -47,4 +69,14 @@
   font-size: 1.2rem;
   flex-grow: 1;  
   color: #ddd;
+}
+
+.add-to-cart-btn{
+  background-image: linear-gradient(45deg, hsl(124, 90%, 43%), hsl(124, 70%, 43%));
+  color: #111;
+  transition: background-image 0.25s;
+}
+
+.add-to-cart-btn:hover {
+  background-image: linear-gradient(45deg, hsl(124, 100%, 43%), hsl(124, 100%, 43%));
 }
