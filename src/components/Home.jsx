@@ -22,7 +22,7 @@ function Home() {
           <p className="developer">Developed by <a href="https://github.com/isimeri" target='_blank'>isimeri</a></p>
         </div>
         <div className="homepage-right">
-          <Link to="/shop">Go to store</Link>
+          <Link to="/store">Go to store</Link>
         </div>
       </div>
       <video className='video-wallpaper' autoPlay loop muted playsInline>

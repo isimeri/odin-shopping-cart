@@ -6,9 +6,9 @@ import Icon from '@mdi/react';
 import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiMicrosoftXbox, mdiSonyPlaystation, mdiNintendoSwitch } from '@mdi/js';
 import Sidebar from "./Sidebar";
 import Nav from './Nav';
-import './shop.css'
+import './Store.css'
 
-function Shop() {
+function Store() {
   const {data, error, isLoading, PLATFORM_ICONS, resetIcons} = useProducts();//productsToDisplay, setProductsToDisplay
   const { addToCart } = useCart();
   const [activeFilter, setActiveFilter] = useState(null);
@@ -27,12 +27,12 @@ function Shop() {
   const productsToDisplay = filterByPlatform(activeFilter);
 
   return (
-    <div className='shop-container'>
+    <div className='store-container'>
       <Nav />
       <Sidebar activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
       <div className="products-container">
         {productsToDisplay.map(item => {
-          const url = "/shop/" + item.slug;
+          const url = "/store/" + item.slug;
           return (
               <div key={item.id} className="product-card">
                 <Link to={url} className='product-link'>
@@ -72,4 +72,4 @@ function Shop() {
   )
 }
 
-export default Shop
+export default Store;

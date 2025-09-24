@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import { ProductsProvider } from "./ProductsContext";
 import { CartProvider } from "./CartContext";
 import Home from "./components/Home";
-import Shop from "./components/Shop";
+import Store from "./components/Store";
 import Product from "./components/Product";
 import Cart from "./components/Cart";
 import ErrorPage from "./components/ErrorPage";
-import "./index.css"
+import "./index.css";
 
 const routes = [
   {
@@ -17,11 +17,11 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "shop",
-    element: <Shop />,
+    path: "store",
+    element: <Store />,
   },
   {
-    path: "shop/:id",
+    path: "store/:id",
     element: <Product />,
   },
   {
