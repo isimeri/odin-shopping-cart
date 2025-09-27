@@ -5,7 +5,7 @@ import "./Sidebar.css";
 function Sidebar({activeFilter, setActiveFilter}){
 
   const { PLATFORM_ICONS } = useProducts();
-  const GENRES = ["action", "adventure", "indie", "strategy", "casual", "sports", "fighting", "rpg", "massively multiplayer", "simulation", "racing", "educational", "shooter", "puzzle", "board games", "arcade", "platformer"]
+  const GENRES = ["action", "adventure", "indie", "strategy", "casual", "sports", "fighting", "rpg", "massively multiplayer", "simulation", "racing", "educational", "shooter", "puzzle", "board games", "arcade", "platformer", "family", "card"]
 
   const resetButtonsHighlightPartial = (e) => {
     const parent = e.target.closest(".sidebar-filter-list");

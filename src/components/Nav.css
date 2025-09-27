@@ -1,4 +1,5 @@
 nav{
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,12 +11,49 @@ nav a{
   text-decoration: none;
   padding: 0.2rem;
 }
-nav a:nth-child(1){
+.home-link{
   display: flex;
   gap: 0.2rem;
   align-items: center;
   font-size: 2rem;
+  font-family: "Doctor Glitch";
 }
-nav a:nth-child(2){
+.cart-link{
   margin-top: 0.5rem;
+  position: relative;
+}
+.cart-count{
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  background-color: #00da0e;
+  color: #111;
+  padding: 0.2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+nav > a:hover >.cart-count{
+  background-color: #ddd;
+}
+
+.added-success-msg{
+  position: absolute;
+  top: 0.5rem;
+  right: 6rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  border: 1px solid #00da0e;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: #00da0e;
+  font-weight: bold;
+  transition: top 0.3s ease-in;
+}
+.added-success-msg.hidden{
+  top: -4rem;
 }

@@ -1,13 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useRef } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
+  const timeoutRef = useRef(null)
+    
+  function showToast(){
+    const successMsg = document.querySelector(".added-success-msg");
+    successMsg.classList.remove("hidden");
+
+    if(timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(()=>{
+      successMsg.classList.add("hidden");
+    },2000);
+  }
+
   const addToCart = (obj) => {
     const found = cart.find(item => item.id === obj.id);
     if(found) return;
+
+    showToast();
 
     setCart(prevState => [...prevState, obj]);
   }
