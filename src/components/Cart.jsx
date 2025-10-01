@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import "./Cart.css";
 
 const Cart = () => {
-  const {data, PLATFORM_ICONS, resetIcons} = useProducts();
+  const { PLATFORM_ICONS, resetIcons} = useProducts();
   const {cart, removeFromCart, clearCart} = useCart()
 
   return (

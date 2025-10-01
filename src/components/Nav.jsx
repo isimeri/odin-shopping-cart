@@ -11,8 +11,8 @@ function Nav() {
   return (
     <nav>
       <Link to="/" className='home-link'><Icon path={mdiController} size={2.5} />GameBruh</Link>
-      <span className="added-success-msg hidden">Added successfully!</span>
-      <Link to="/cart" className='cart-link'><Icon path={mdiCartVariant} size={1.5} /><span className="cart-count">{cart.length}</span></Link>
+      <span className="added-success-msg hidden" data-testid="added-success-msg">Added successfully!</span>
+      <Link to="/cart" className='cart-link' aria-label='cart-link'><Icon path={mdiCartVariant} size={1.5} /><span className="cart-count" data-testid="cart-count">{cart.length}</span></Link>
     </nav>
   )
 }

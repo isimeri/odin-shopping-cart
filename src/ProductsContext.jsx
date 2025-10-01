@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiMicrosoftXbox, mdiSonyPlaystation, mdiNintendoSwitch } from '@mdi/js';
 
-const ProductsContext = createContext();
+export const ProductsContext = createContext();
 
 export function ProductsProvider({ children }) {
   const [data, setData] = useState([]);

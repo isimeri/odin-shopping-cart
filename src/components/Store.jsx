@@ -1,9 +1,8 @@
-import { useEffect, useState, Fragment } from 'react';
+import { useState } from 'react';
 import { useProducts } from '../ProductsContext';
 import { useCart } from '../CartContext';
 import { Link } from 'react-router';
 import Icon from '@mdi/react';
-import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiMicrosoftXbox, mdiSonyPlaystation, mdiNintendoSwitch } from '@mdi/js';
 import Sidebar from "./Sidebar";
 import Nav from './Nav';
 import './Store.css'

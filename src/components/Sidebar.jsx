@@ -42,7 +42,7 @@ function Sidebar({activeFilter, setActiveFilter}){
     <div className="sidebar">
       {activeFilter !== null ? <button onClick={removeFilters} className="remove-filters-btn">Remove filters<span>×</span></button> : null}
       <h2>Platform</h2>
-      <ul className="sidebar-filter-list">
+      <ul className="sidebar-filter-list platform-filter-list">
         <button className="sidebar-filter-btn" onClick={(e) => {handleButtonClick(e,"pc")}}>Windows <Icon path={PLATFORM_ICONS.pc.icon} size={1} /></button>
         <button className="sidebar-filter-btn" onClick={(e) => {handleButtonClick(e,"linux")}}>Linux <Icon path={PLATFORM_ICONS.linux.icon} size={1} /></button>
         <button className="sidebar-filter-btn" onClick={(e) => {handleButtonClick(e,"macos")}}>macOS <Icon path={PLATFORM_ICONS.macos.icon} size={1} /></button>
