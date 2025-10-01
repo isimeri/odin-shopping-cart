@@ -61,12 +61,7 @@ export function ProductsProvider({ children }) {
             return item;
           });
 
-          const maset = new Set(editedJson.reduce((acc, item) => {
-            return acc.concat(item.genres.map(g => g.name));
-          },[]))
-          console.log(maset);
           setData(editedJson);
-
         }        
       
       } catch(err){

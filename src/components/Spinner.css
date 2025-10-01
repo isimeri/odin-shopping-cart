@@ -1,0 +1,36 @@
+.spinner{
+    display:flex;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 1rem;
+}
+.spinner-part{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: #ddd;
+}
+.spinner-part.a{
+    /* border-top-color: steelblue; */
+    animation: rotate1 1s ease-in infinite;
+}
+.spinner-part.b{
+    /* border-top-color: blueviolet; */
+    animation: rotate1 2s ease-out infinite;
+}
+.spinner-part.c{
+    /* border-top-color: rgb(0, 224, 176); */
+    animation: rotate1 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate1{
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes rotate2{
+    0%{transform: rotate(0);}
+    60%, 100%{transform: rotate(360deg);}
+}

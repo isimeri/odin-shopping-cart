@@ -42,7 +42,7 @@ describe('store', () => {
     expect(productCards).toHaveLength(2);
   });
 
-  it('renders ', async () => {
+  it('renders products that have a name, two links that go to the right product page, a price, an "add to cart" button', async () => {
     const addToCart = vi.fn();
     const { container } = renderStorePage({
       cart: [dummyGame, dummyGame2],
@@ -66,5 +66,31 @@ describe('store', () => {
 
     await userEvent.click(button);
     expect(addToCart).toHaveBeenCalledWith(dummyGame);
+  });
+
+  it('renders a spinner while loading', () => {
+    const { container } = renderStorePage({
+      addToCart: () => {},
+      cart: [dummyGame, dummyGame2],
+      isLoading: true
+    });
+
+    const spinner = container.querySelector(".spinner");
+
+    expect(spinner).toBeInTheDocument();
+    expect(screen.getByText("Loading...")).toBeInTheDocument();
+  });
+
+  it('renders an error message in case there is an error', () => {
+    const { container } = renderStorePage({
+      addToCart: () => {},
+      cart: [dummyGame, dummyGame2],
+      error: "oopsie daisy"
+    });
+
+    const errorMsg = container.querySelector(".error-msg");
+
+    expect(errorMsg).toBeInTheDocument();
+    expect(errorMsg).toHaveTextContent("Error: oopsie daisy");
   });
 });

@@ -5,7 +5,8 @@ import { Link } from 'react-router';
 import Icon from '@mdi/react';
 import Sidebar from "./Sidebar";
 import Nav from './Nav';
-import './Store.css'
+import Spinner from './Spinner';
+import './Store.css';
 
 function Store() {
   const {data, error, isLoading, PLATFORM_ICONS, resetIcons} = useProducts();//productsToDisplay, setProductsToDisplay
@@ -30,7 +31,7 @@ function Store() {
       <Nav />
       <Sidebar activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
       <div className="products-container">
-        {productsToDisplay.map(item => {
+        {isLoading ? <div className="spinner-container"><Spinner /><p className="loading-msg">Loading...</p></div> : error ? <div className="error-container"><p className="error-msg">Error: {error}</p></div> : productsToDisplay.map(item => {
           const url = "/store/" + item.slug;
           return (
               <div key={item.id} className="product-card">
