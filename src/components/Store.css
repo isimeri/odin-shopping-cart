@@ -19,21 +19,7 @@ nav{
   top: 0;
   overflow-y: auto;
 }
-.spinner-container, .error-container{
-  margin: 0 auto;
-  padding-top: 2rem;
-}
-.loading-msg, .error-msg{
-  text-align: center;
-  font-size: 1.2rem;
-}
-.error-msg{
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  background-color: #222;
-  color: #ff6d6d;
-  border: 1px solid #ff6d6d;
-}
+
 .products-container{
   grid-area: main;
   overflow-y: auto;

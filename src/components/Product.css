@@ -11,10 +11,7 @@
   flex-direction: column;
   align-items: center;
 }
-.product-inner > .vwrapper > a{
-  font-size: 1.5rem;
-  text-decoration: none;
-}
+
 .gamecard{
   display: flex;
   flex-direction: column;

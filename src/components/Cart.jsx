@@ -55,7 +55,7 @@ const Cart = () => {
               })}
             </ul>
             <div className="hwrapper">
-              <Link to="/store">← Back to store</Link>
+              <Link to="/store" className="navigation-link">← Back to store</Link>
               {cart.length > 0 && <button className="clear-cart-btn" onClick={clearCart}>Remove all items</button>}
             </div>
           </div>
@@ -63,7 +63,7 @@ const Cart = () => {
             <p className="estimated-total">Estimated total: <span>{cart.reduce((acc, cur) => acc + cur.price, 0)}€</span></p>
             <button className="pay-btn">Continue to payment</button>
           </div>
-        </div> : <p className="empty-cart">Hmm...you got an empty cart...</p>}
+        </div> : <div className="empty-cart-container"><p className="empty-cart">Hmm...you got an empty cart...</p><Link to="/store" className="navigation-link">← Back to store</Link></div>}
       </div>
     </div>
   );

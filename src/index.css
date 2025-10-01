@@ -70,6 +70,31 @@ a{
 a:hover{
   color: #00da0e;
 }
+.navigation-link{
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.navigation-link:hover{
+  text-decoration: underline;
+}
+
+.spinner-container, .error-container{
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+.loading-msg, .error-msg{
+  text-align: center;
+  font-size: 1.2rem;
+}
+.error-msg{
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  background-color: #222;
+  color: #ff6d6d;
+  border: 1px solid #ff6d6d;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

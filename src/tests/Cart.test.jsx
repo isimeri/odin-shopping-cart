@@ -113,4 +113,13 @@ describe('cart', () => {
 
     expect(button).toBeInTheDocument();
   });
+  it('renders a message if the cart is empty', async () => {
+    const { container } = renderCartPage({
+      cart: []
+    });
+
+    const msg = screen.getByText("Hmm...you got an empty cart...");
+
+    expect(msg).toBeInTheDocument();
+  });
 });

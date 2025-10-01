@@ -10,15 +10,15 @@ function Product() {
   const { id } = useParams();
   const {data, error, isLoading} = useProducts();
   const { addToCart } = useCart();
-  const item = data.find(it => it.slug === id)
+  const item = data.find(it => it.slug === id) || null;
 
   return (
     <div className='product-container'>
       <Nav />
       <div className="product-inner">
         <div className="vwrapper">
-          <Link to="/store">← Back to store</Link>
-          <div className="gamecard">
+          <Link to="/store" className="navigation-link">← Back to store</Link>
+          {item ? <div className="gamecard">
             <h1 className='product-title'>{item.name}</h1>
             <div className="hwrapper">
               <div className="carousel">
@@ -38,7 +38,7 @@ function Product() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> : <div className='error-container'><p className="error-msg">Oopsie, game not found</p></div>}
         </div>
       </div>
     </div>
